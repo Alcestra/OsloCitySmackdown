@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float playerSpeed;
+    public float MovementSpeed = 5;
     private Rigidbody2D rb2D;
 
     Vector2 movement;
@@ -28,7 +28,18 @@ public class Player : MonoBehaviour
     {
 
         //Movement
-        rb2D.MovePosition(rb2D.position + movement * playerSpeed * Time.fixedDeltaTime);
+        rb2D.MovePosition(rb2D.position + movement * MovementSpeed * Time.fixedDeltaTime);
 
     }
+
+
+    //Attack
+   /* private void OnTriggerEnter2D(Collider2D hit)
+    {
+        if(hit.gameObject.CompareTag("Enemy"))
+        {
+            
+        }
+    }
+    */
 }
