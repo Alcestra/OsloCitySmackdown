@@ -17,12 +17,19 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+                
     }
 
 
     private void FixedUpdate()
     {
-        
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("dead");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D hit)
@@ -31,6 +38,7 @@ public class Enemy : MonoBehaviour
         {
             Health -= 1;
         }
+
     }
 
 
